@@ -47,6 +47,7 @@ internal class BooksController
             var titleWithReview = $"{title}, Score: {review}";
             MockDatabase.Books.Add(titleWithReview);
             AnsiConsole.MarkupLine("[green]Book added successfully with review![/]");
+            Debug.Print("Success: Added Review.");
         }
 
         AnsiConsole.MarkupLine("Press any key to continue.");
