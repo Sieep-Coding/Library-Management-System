@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using System.Diagnostics;
+using Spectre.Console;
 using TCSA.OOP.LibraryManagementSystem.Models;
 
 namespace TCSA.OOP.LibraryManagementSystem.Classes;
@@ -13,8 +14,8 @@ internal class BooksController
             AnsiConsole.MarkupLine($"- [cyan]{book}[/]");
         }
 
+        Debug.Print("Success: Books printed.");
         AnsiConsole.MarkupLine("Press any key to continue.");
-
         Console.ReadKey();
     }
     internal static void AddBook()
@@ -26,8 +27,15 @@ internal class BooksController
         if (MockDatabase.Books.Contains(title))
         {
             AnsiConsole.MarkupLine("[red]This book already exists.[/]");
+            Debug.Print("Error: Title already exists.");
         }
 
+        else if (title == null)
+        {
+            AnsiConsole.MarkupLine("[red]Please insert a title.[/]");
+            Debug.Print("Error: No title.");
+        }
+        
         else if (review > 5 || review <= 0)
         {
             AnsiConsole.MarkupLine("[red]Enter a score between 1 and 5.[/]");
