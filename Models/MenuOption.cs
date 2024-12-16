@@ -1,5 +1,4 @@
-﻿// Ignore Spelling: TCSA OOP
-namespace TCSA.OOP.LibraryManagementSystem.Models
+﻿namespace TCSA.OOP.LibraryManagementSystem.Models
 {
     internal static class MenuOption
     {
