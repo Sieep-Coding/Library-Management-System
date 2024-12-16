@@ -6,10 +6,10 @@ namespace TCSA.OOP.LibraryManagementSystem.Classes
 {
     internal class UserInterface
     {
-        private BooksController booksController = new BooksController();
+        private readonly BooksController booksController = new BooksController();
         internal void MainMenu()
         {
-            while (true) 
+            while (true)
             {
                 Console.Clear();
 
