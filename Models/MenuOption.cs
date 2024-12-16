@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCSA.OOP.LibraryManagementSystem
+namespace TCSA.OOP.LibraryManagementSystem.Models
 {
     internal static class MenuOption
     {

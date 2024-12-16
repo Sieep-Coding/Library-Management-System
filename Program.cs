@@ -1,5 +1,6 @@
 ﻿using Spectre.Console;
-using TCSA.OOP.LibraryManagementSystem;
+using TCSA.OOP.LibraryManagementSystem.Classes;
+using TCSA.OOP.LibraryManagementSystem.Models;
 
 while (true)
 {

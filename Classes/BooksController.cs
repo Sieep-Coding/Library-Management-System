@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Spectre.Console;
 
-namespace TCSA.OOP.LibraryManagementSystem;
+namespace TCSA.OOP.LibraryManagementSystem.Classes;
 
 internal static class BooksController
 {
