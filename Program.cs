@@ -16,11 +16,9 @@ while (true)
         case MenuOption.MenuOptions.ViewBooks:
             BooksController.ViewBooks();
             break;
-
         case MenuOption.MenuOptions.AddBook:
             BooksController.AddBook();
             break;
-
         case MenuOption.MenuOptions.DeleteBook:
             BooksController.DeleteBook();
             break;
