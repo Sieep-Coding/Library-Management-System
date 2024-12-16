@@ -76,7 +76,7 @@ internal static class BooksController
         var bookToDelete = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
             .Title("Select a [red]book[/] to delete:")
-    .AddChoices(books));
+            .AddChoices(books));
 
         if (books.Remove(bookToDelete))
         {
