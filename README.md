@@ -4,4 +4,4 @@ A straightforward console app that allows you to manage the books you've read.
 
 # License
 
-See [License.](LICENSE.md)
+See [License.](LICENSE.txt)
