@@ -2,7 +2,6 @@
 using TCSA.OOP.LibraryManagementSystem.Models;
 
 namespace TCSA.OOP.LibraryManagementSystem.Classes;
-
 internal class BooksController
 {
     internal static void ViewBooks()
