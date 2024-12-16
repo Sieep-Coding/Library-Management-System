@@ -43,15 +43,23 @@ internal static class BooksController
     {
         var title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the book to add:");
 
+        var review = AnsiConsole.Ask<int>("[cyan]Enter a score: (1-5)[/]");
+
         if (books.Contains(title))
         {
             AnsiConsole.MarkupLine("[red]This book already exists.[/]");
         }
 
+        else if (review > 5 || review <= 0)
+        {
+            AnsiConsole.MarkupLine("[red]Enter a score between 1 and 5.[/]");
+        }
+
         else
         {
-            books.Add(title);
-            AnsiConsole.MarkupLine("[green]Book added successfully![/]");
+            var titleWithReview = $"{title}, Score: {review}";
+            books.Add(titleWithReview);
+            AnsiConsole.MarkupLine("[green]Book added successfully with review![/]");
         }
 
         AnsiConsole.MarkupLine("Press any key to continue.");
