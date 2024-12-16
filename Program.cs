@@ -36,7 +36,7 @@ while (true)
 
     switch (choice)
     {
-        case "View Book":
+        case "View Books":
             AnsiConsole.MarkupLine("[yellow]List of Books:[/]");
 
             foreach (var book in books)
@@ -70,6 +70,31 @@ while (true)
             break;
 
         case "Delete Book":
+            if (books.Count == 0)
+            {
+                AnsiConsole.MarkupLine("[red]No books available to delete.[/]");
+                Console.ReadKey();
+                return;
+            }
+
+            var bookToDelete = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                .Title("Select a [red]book[/] to delete:")
+        .       AddChoices(books));
+
+            if (books.Remove(bookToDelete))
+            {
+                AnsiConsole.MarkupLine("[red]Book deleted successfully![/]");
+            }
+
+            else
+            {
+                AnsiConsole.MarkupLine("[red]Book not found.[/]");
+            }
+
+            AnsiConsole.MarkupLine("Press any key to continue.");
+
+            Console.ReadKey();
             break;
     }
 }
