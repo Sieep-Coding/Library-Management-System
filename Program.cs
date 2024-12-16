@@ -1,3 +1,4 @@
 ﻿using TCSA.OOP.LibraryManagementSystem.Classes;
 
-UserInterface.MainMenu();
+UserInterface userInterface = new();
+userInterface.MainMenu();

@@ -6,7 +6,8 @@ namespace TCSA.OOP.LibraryManagementSystem.Classes
 {
     internal class UserInterface
     {
-        internal static void MainMenu()
+        private BooksController booksController = new BooksController();
+        internal void MainMenu()
         {
             while (true) 
             {
