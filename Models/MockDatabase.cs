@@ -2,8 +2,8 @@
 {
     internal static class MockDatabase
     {
-        internal static List<string> Books = new()
-        {
+        internal static List<string> Books =
+        [
             "The Great Gatsby",
             "To Kill a Mockingbird",
             "1984",
@@ -23,6 +23,6 @@
             "Fahrenheit 451",
             "Catch-22",
             "The Hitchhiker's Guide to the Galaxy"
-        };
+        ];
     }
 }
