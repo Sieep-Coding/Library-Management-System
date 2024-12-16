@@ -43,31 +43,7 @@ while (true)
             break;
 
         case MenuOption.DeleteBook:
-            if (books.Count == 0)
-            {
-                AnsiConsole.MarkupLine("[red]No books available to delete.[/]");
-                Console.ReadKey();
-                return;
-            }
-
-            var bookToDelete = AnsiConsole.Prompt(
-                new SelectionPrompt<string>()
-                .Title("Select a [red]book[/] to delete:")
-        .AddChoices(books));
-
-            if (books.Remove(bookToDelete))
-            {
-                AnsiConsole.MarkupLine("[red]Book deleted successfully![/]");
-            }
-
-            else
-            {
-                AnsiConsole.MarkupLine("[red]Book not found.[/]");
-            }
-
-            AnsiConsole.MarkupLine("Press any key to continue.");
-
-            Console.ReadKey();
+            DeleteBook();
             break;
     }
 }
@@ -99,6 +75,35 @@ void AddBook()
     {
         books.Add(title);
         AnsiConsole.MarkupLine("[green]Book added successfully![/]");
+    }
+
+    AnsiConsole.MarkupLine("Press any key to continue.");
+
+    Console.ReadKey();
+}
+
+void DeleteBook()
+{
+    if (books.Count == 0)
+    {
+        AnsiConsole.MarkupLine("[red]No books available to delete.[/]");
+        Console.ReadKey();
+        return;
+    }
+
+    var bookToDelete = AnsiConsole.Prompt(
+        new SelectionPrompt<string>()
+        .Title("Select a [red]book[/] to delete:")
+.AddChoices(books));
+
+    if (books.Remove(bookToDelete))
+    {
+        AnsiConsole.MarkupLine("[red]Book deleted successfully![/]");
+    }
+
+    else
+    {
+        AnsiConsole.MarkupLine("[red]Book not found.[/]");
     }
 
     AnsiConsole.MarkupLine("Press any key to continue.");
