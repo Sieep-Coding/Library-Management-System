@@ -39,22 +39,7 @@ while (true)
             break;
 
         case MenuOption.AddBook:
-            var title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the book to add:");
-
-            if (books.Contains(title))
-            {
-                AnsiConsole.MarkupLine("[red]This book already exists.[/]");
-            }
-
-            else
-            {
-                books.Add(title);
-                AnsiConsole.MarkupLine("[green]Book added successfully![/]");
-            }
-
-            AnsiConsole.MarkupLine("Press any key to continue.");
-
-            Console.ReadKey();
+            AddBook();
             break;
 
         case MenuOption.DeleteBook:
@@ -68,7 +53,7 @@ while (true)
             var bookToDelete = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                 .Title("Select a [red]book[/] to delete:")
-        .       AddChoices(books));
+        .AddChoices(books));
 
             if (books.Remove(bookToDelete))
             {
@@ -86,6 +71,7 @@ while (true)
             break;
     }
 }
+
 void ViewBooks()
 {
     AnsiConsole.MarkupLine("[yellow]List of Books:[/]");
@@ -99,6 +85,27 @@ void ViewBooks()
 
     Console.ReadKey();
 }
+
+void AddBook()
+{
+    var title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the book to add:");
+
+    if (books.Contains(title))
+    {
+        AnsiConsole.MarkupLine("[red]This book already exists.[/]");
+    }
+
+    else
+    {
+        books.Add(title);
+        AnsiConsole.MarkupLine("[green]Book added successfully![/]");
+    }
+
+    AnsiConsole.MarkupLine("Press any key to continue.");
+
+    Console.ReadKey();
+}
+
 enum MenuOption
 {
     ViewBooks,
