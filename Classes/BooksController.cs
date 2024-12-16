@@ -35,7 +35,7 @@ internal class BooksController
             AnsiConsole.MarkupLine("[red]Please insert a title.[/]");
             Debug.Print("Error: No title.");
         }
-        
+
         else if (review > 5 || review < 0 || review == 0)
         {
             AnsiConsole.MarkupLine("[red]Enter a score between 1 and 5.[/]");
